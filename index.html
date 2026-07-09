@@ -16,21 +16,37 @@
     <meta property="og:image" content="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23f39c12%22/><text y=%22.75em%22 x=%2210%22 font-size=%2270%22 fill=%22white%22>🤝</text></svg>">
 
     <style>
+        /* Fondo interactivo con animación de gradiente */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f6f9;
             color: #333;
+            background: linear-gradient(-45deg, #ebf3fa, #e2ebf0, #cfd9df, #e6e9fa);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .container {
-            max-width: 700px;
-            margin: 30px auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            max-width: 650px;
+            width: 90%;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            backdrop-filter: blur(5px);
         }
         h1 {
             color: #2c3e50;
@@ -52,48 +68,28 @@
             background-color: #fdfbf7;
             border-left: 5px solid #d4af37;
             padding: 25px;
-            border-radius: 6px;
-            margin-bottom: 30px;
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
-        }
-        .btn-donate {
-            display: block;
-            width: 80%;
-            max-width: 320px;
-            margin: 15px auto;
-            background: linear-gradient(135deg, #f39c12, #d4af37);
-            color: #fff;
-            text-align: center;
-            padding: 14px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.05em;
-            border-radius: 50px;
-            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
-            transition: all 0.3s ease;
-        }
-        .btn-donate:hover {
-            background: linear-gradient(135deg, #d4af37, #b8972f);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
-        }
-        .binance-info {
-            text-align: center;
-            font-size: 0.9em;
-            color: #555;
-            margin-top: -10px;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-        .pago-movil-box {
-            margin-top: 25px;
-            font-size: 1em;
-            border-top: 2px dashed #e0e0e0;
-            padding-top: 20px;
-            background-color: #fff;
-            padding: 15px;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            margin-bottom: 30px;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.01);
+        }
+        .data-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+            font-size: 1.1em;
+            color: #2c3e50;
+            margin-top: 15px;
+        }
+        .data-item {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed #eee;
+        }
+        .data-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
         }
         .footer {
             text-align: center;
@@ -125,20 +121,18 @@
         </div>
 
         <div class="donation-section">
-            <h3 style="margin-top: 0; text-align: center; color: #2c3e50;">¿Cómo puedes colaborar?</h3>
-            <p style="text-align: center; color: #555;">Puedes realizar tu donación de forma segura a través de los siguientes canales:</p>
+            <h3 style="margin-top: 0; text-align: center; color: #2c3e50;">Datos para colaborar</h3>
+            <p style="text-align: center; color: #555; font-size: 0.95em;">Puedes realizar tu apoyo directamente utilizando la siguiente información:</p>
             
-            <!-- Botón de PayPal corregido (Enlace directo para enviar dinero a tu correo) -->
-            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=hectormiguelr1999@gmail.com&currency_code=USD" class="btn-donate" target="_blank">Donar vía PayPal</a>
-            
-            <!-- Botón de Binance ID -->
-            <a href="https://link.binance.com/en/send?id=Siczel" class="btn-donate" target="_blank">Donar vía Binance ID</a>
-            <div class="binance-info">Binance ID: Siczel</div>
-            
-            <!-- Sección de Pago Móvil con tus datos correctos -->
-            <div class="pago-movil-box">
-                <strong style="color: #2c3e50; display: block; margin-bottom: 8px; text-align: center;">Datos para Pago Móvil (Venezuela):</strong>
-                <div style="max-width: 280px; margin: 0 auto; font-size: 1.05em;">
+            <div class="data-box">
+                <div class="data-item">
+                    <b>• PayPal (Correo):</b> hectormiguelr1999@gmail.com
+                </div>
+                <div class="data-item">
+                    <b>• Binance ID:</b> Siczel
+                </div>
+                <div class="data-item" style="background-color: #fcfcfc; padding: 10px; border-radius: 6px; border: 1px solid #f0f0f0;">
+                    <span style="display: block; font-weight: bold; margin-bottom: 5px; color: #d4af37;">Pago Móvil (Venezuela):</span>
                     • <b>Banco:</b> Del Tesoro<br>
                     • <b>Cédula:</b> 28.305.611<br>
                     • <b>Teléfono:</b> 0412-4756839
