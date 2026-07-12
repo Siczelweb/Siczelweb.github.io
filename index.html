@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miguel | Perfil Profesional</title>
+    
+    <!-- Icono de la ola para la pestaña del navegador (Favicon) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌊</text></svg>">
+
     <!-- Importación de tipografía elegante -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +18,6 @@
             --bg-primary: #0f172a; /* Azul marino profundo */
             --bg-secondary: #1e293b; /* Azul pizarra */
             --accent: #0ea5e9; /* Azul cielo brillante */
-            --accent-gold: #e2e8f0; /* Blanco grisáceo elegante */
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
         }
@@ -39,7 +42,7 @@
             padding: 20px;
         }
 
-        /* Fondo dinámico y profesional (Olas abstractas) */
+        /* Fondo dinámico (Olas abstractas) */
         .ocean-bg {
             position: fixed;
             top: 0;
@@ -65,7 +68,6 @@
             backdrop-filter: blur(16px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             text-align: center;
-            transition: transform 0.3s ease;
         }
 
         /* Encabezado */
@@ -111,14 +113,9 @@
             font-weight: 300;
         }
 
-        .bio-text strong {
-            color: var(--text-main);
-            font-weight: 500;
-        }
-
-        /* Sección de Intereses/Pasatiempos */
-        .interests-title {
-            font-size: 0.9rem;
+        /* Sección de Pasatiempos */
+        .section-title {
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: var(--text-muted);
@@ -131,6 +128,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 12px;
+            margin-bottom: 40px;
         }
 
         .tag {
@@ -139,7 +137,6 @@
             padding: 10px 18px;
             border-radius: 12px;
             font-size: 0.9rem;
-            font-weight: 400;
             color: var(--text-main);
             display: flex;
             align-items: center;
@@ -151,14 +148,50 @@
             background: rgba(14, 165, 233, 0.1);
             border-color: var(--accent);
             transform: translateY(-2px);
-            color: #ffffff;
         }
 
-        /* Nota Interactiva Discreta */
+        /* Sección de Redes Sociales (Botones de Enlaces) */
+        .social-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+            padding: 12px 24px;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+        }
+
+        .social-btn:hover {
+            background: var(--text-main);
+            color: var(--bg-primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Estilo específico al pasar por encima de X o Instagram si quieres destacar */
+        .social-btn.instagram:hover {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: #fff;
+            border-color: transparent;
+        }
+
+        /* Nota Interactiva */
         .interaction-hint {
             margin-top: 35px;
             font-size: 0.8rem;
-            color: rgba(148, 163, 184, 0.4);
+            color: rgba(148, 163, 184, 0.3);
             letter-spacing: 0.05em;
         }
 
@@ -181,14 +214,14 @@
         }
 
         /* Adaptabilidad (Responsive) */
-        @media (max-width: 480px) {
+        @media (max-width: 540px) {
             .profile-card {
                 padding: 30px 20px;
             }
             h1 {
                 font-size: 1.8rem;
             }
-            .tag {
+            .tag, .social-btn {
                 width: 100%;
                 justify-content: center;
             }
@@ -210,33 +243,51 @@
             Apasionado por la tecnología, los entornos digitales y las buenas historias. Encuentro mi equilibrio perfecto explorando la costa, donde disfruto del mar y la tranquilidad del litoral. Dedicado a construir experiencias Web modernas, fluidas y funcionales.
         </p>
 
-        <div class="interests-title">Intereses y Pasatiempos</div>
+        <div class="section-title">Intereses y Pasatiempos</div>
         <div class="tags-container">
             <div class="tag"><span>🎮</span> Videojuegos</div>
             <div class="tag"><span>🏖️</span> Vida de Playa</div>
             <div class="tag"><span>🔍</span> Búsqueda de Tesoros</div>
             <div class="tag"><span>🎬</span> Cine de Comedia</div>
-            <div class="tag"><span>🍦</span> Helado de Vainilla</div>
+        </div>
+
+        <div class="section-title">Conecta Conmigo</div>
+        <div class="social-container">
+            <!-- REEMPLAZA EL '#' POR EL LINK DE TUS REDES SOCIALES -->
+            <a href="#" target="_blank" class="social-btn">
+                <span>𝕏</span> Twitter / X
+            </a>
+            <a href="https://www.instagram.com/miguel.rn1999/" target="_blank" class="social-btn instagram">
+                <span>📸</span> Instagram
+            </a>
+            <a href="#" target="_blank" class="social-btn">
+                <span>📘</span> Facebook
+            </a>
+            <!-- Puedes duplicar esta línea si necesitas añadir otro enlace más tarde -->
+            <a href="#" target="_blank" class="social-btn">
+                <span>🔗</span> Mi Enlace
+            </a>
         </div>
 
         <p class="interaction-hint">Haz clic en cualquier lugar para interactuar</p>
     </div>
 
     <script>
-        // Interactividad Profesional: Efecto de partículas de luz
+        // Efecto premium de partículas al hacer clic
         document.addEventListener('click', (e) => {
+            // Evita que salgan chispas si haces clic en los botones de redes sociales
+            if (e.target.closest('.social-btn')) return;
+
             for(let i = 0; i < 5; i++) {
                 const sparkle = document.createElement('div');
                 sparkle.classList.add('sparkle');
                 
-                // Distribución ligera alrededor del clic
                 const offsetX = (Math.random() - 0.5) * 30;
                 const offsetY = (Math.random() - 0.5) * 30;
                 
                 sparkle.style.left = `${e.clientX + offsetX}px`;
                 sparkle.style.top = `${e.clientY + offsetY}px`;
                 
-                // Variación sutil de color
                 if(Math.random() > 0.5) {
                     sparkle.style.background = '#ffffff';
                     sparkle.style.boxShadow = '0 0 10px #ffffff';
