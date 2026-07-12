@@ -3,152 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apoyo para la recuperación - Miguel Romero</title>
-    
-    <!-- Configuración para la vista previa en WhatsApp y redes sociales -->
-    <meta property="og:title" content="Campaña de Recuperación - Miguel Romero">
-    <meta property="og:description" content="Ayuda a Miguel Romero a recuperar sus pertenencias y herramientas de trabajo tras el sismo en La Guaira. ¡Cualquier apoyo o difusión cuenta!">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://thiorr.github.io/Apoyandomerecuperarmiscosas/">
-    
-    <!-- Ícono bonito para la pestaña del navegador y vista previa (Favicon) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤝</text></svg>">
-    <meta property="og:image" content="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23f39c12%22/><text y=%22.75em%22 x=%2210%22 font-size=%2270%22 fill=%22white%22>🤝</text></svg>">
-
+    <title>Miguel | Mi Espacio Personal</title>
     <style>
-        /* Fondo interactivo con animación de gradiente */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
             color: #333;
-            background: linear-gradient(-45deg, #ebf3fa, #e2ebf0, #cfd9df, #e6e9fa);
-            background-size: 400% 400%;
-            animation: gradientAnimation 15s ease infinite;
             min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Fondo Tropical con Palmeras */
+        .background-decor {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 0 20px;
+            opacity: 0.25;
         }
 
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .palm-tree {
+            font-size: 12rem;
+            line-height: 1;
+            transform-origin: bottom center;
+            animation: sway 6s ease-in-out infinite alternate;
         }
 
-        .container {
-            max-width: 650px;
-            width: 90%;
+        .palm-tree.right {
+            animation-delay: -3s;
+        }
+
+        @keyframes sway {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
+
+        /* Contenedor Principal */
+        .main-container {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
             margin: 40px auto;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 35px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            backdrop-filter: blur(5px);
+            padding: 20px;
         }
-        h1 {
-            color: #2c3e50;
+
+        header {
             text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-title {
+            font-size: 3rem;
+            color: #2c3e50;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
             margin-bottom: 10px;
         }
-        .subtitle {
-            text-align: center;
+
+        .profile-subtitle {
+            font-size: 1.2rem;
             color: #7f8c8d;
-            font-size: 1.1em;
+            font-weight: 400;
+        }
+
+        /* Tarjeta de Biografía */
+        .bio-card {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
             margin-bottom: 30px;
-        }
-        .story {
-            margin-bottom: 30px;
-            font-size: 1.05em;
-            text-align: justify;
-        }
-        .donation-section {
-            background-color: #fdfbf7;
-            border-left: 5px solid #d4af37;
-            padding: 25px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.01);
-        }
-        .data-box {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.02);
-            font-size: 1.1em;
-            color: #2c3e50;
-            margin-top: 15px;
-        }
-        .data-item {
-            margin-bottom: 12px;
-            padding-bottom: 12px;
-            border-bottom: 1px dashed #eee;
-        }
-        .data-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-        .footer {
             text-align: center;
-            font-size: 0.95em;
-            color: #7f8c8d;
-            margin-top: 40px;
+        }
+
+        .bio-text {
+            font-size: 1.25rem;
             line-height: 1.8;
+            color: #4a5568;
+            margin-bottom: 30px;
         }
-        .hearts {
-            font-size: 1.4em;
-            margin-top: 10px;
-            letter-spacing: 5px;
+
+        /* Grid de Pasatiempos */
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .hobby-item {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .hobby-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .hobby-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .hobby-name {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        /* Instrucción Interactiva */
+        .click-hint {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        /* Elementos que caen (Interactividad) */
+        .falling-element {
+            position: absolute;
+            font-size: 2rem;
+            pointer-events: none;
+            z-index: 10;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Campaña de Recuperación</h1>
-        <div class="subtitle">Ayuda tras el sismo en La Guaira</div>
-        
-        <hr style="border: 0; height: 1px; background: #eee; margin-bottom: 30px;">
-
-        <div class="story">
-            <p>Hola a todos,</p>
-            <p>Escribo esto con el fin de solicitar su apoyo. Recientemente, debido al fuerte sismo ocurrido en La Guaira, lamentablemente perdí parte de mis pertenencias y herramientas de trabajo indispensables. El objetivo de esta página es canalizar el apoyo de amigos, familiares y personas de buen corazón que deseen colaborar para poder reconstruir y recuperar lo perdido.</p>
-            
-            <p>Cualquier aporte, por pequeño que sea, o incluso compartir este enlace, hace una enorme diferencia para mí en este momento.</p>
-        </div>
-
-        <div class="donation-section">
-            <h3 style="margin-top: 0; text-align: center; color: #2c3e50;">Datos para colaborar</h3>
-            <p style="text-align: center; color: #555; font-size: 0.95em;">Puedes realizar tu apoyo directamente utilizando la siguiente información:</p>
-            
-            <div class="data-box">
-                <div class="data-item">
-                    <b>• PayPal (Correo):</b> hectormiguelr1999@gmail.com
-                </div>
-                <div class="data-item">
-                    <b>• Binance ID:</b> Siczel
-                </div>
-                <div class="data-item" style="background-color: #fcfcfc; padding: 10px; border-radius: 6px; border: 1px solid #f0f0f0;">
-                    <span style="display: block; font-weight: bold; margin-bottom: 5px; color: #d4af37;">Pago Móvil (Venezuela):</span>
-                    • <b>Banco:</b> Del Tesoro<br>
-                    • <b>Cédula:</b> 28.305.611<br>
-                    • <b>Teléfono:</b> 0412-4756839
-                </div>
-            </div>
-        </div>
-
-        <div class="footer">
-            <p style="font-weight: bold; color: #2c3e50; margin-bottom: 5px;">Página con fin de apoyo</p>
-            <p style="margin: 0;">Gracias de todo corazón por tu solidaridad.</p>
-            <p style="margin: 5px 0 0 0; font-size: 0.85em; color: #95a5a6;">
-                &copy; Copyright Miguel Romero | Desarrollador por Miguel Romero 2026
-            </p>
-            <div class="hearts">💙 💙 💙</div>
-        </div>
+    <!-- Fondo de Palmeras de Coco -->
+    <div class="background-decor">
+        <div class="palm-tree">🌴</div>
+        <div class="palm-tree right">🌴</div>
     </div>
 
+    <div class="main-container">
+        <header>
+            <h1 class="profile-title">¡Hola, soy Miguel! 👋</h1>
+            <p class="profile-subtitle">Bienvenidos a mi rincón en la web</p>
+        </header>
+
+        <main>
+            <section class="bio-card">
+                <p class="bio-text">
+                    Soy de <strong>La Guaira, Venezuela</strong> 🇻🇪. Vivo donde las olas se encuentran con la costa, lo que explica mi profunda conexión con el mar. Soy un apasionado de la tecnología, las buenas historias y las cosas sencillas pero geniales de la vida.
+                </p>
+                
+                <div class="hobbies-grid">
+                    <div class="hobby-item">
+                        <span class="hobby-icon">🎮</span>
+                        <span class="hobby-name">Videojuegos</span>
+                    </div>
+                    <div class="hobby-item">
+                        <span class="hobby-icon">🏖️</span>
+                        <span class="hobby-name">La Playa</span>
+                    </div>
+                    <div class="hobby-item">
+                        <span class="hobby-icon">🏴‍☠️</span>
+                        <span class="hobby-name">Buscar Tesoros</span>
+                    </div>
+                    <div class="hobby-item">
+                        <span class="hobby-icon">🎬</span>
+                        <span class="hobby-name">Cine de Comedia</span>
+                    </div>
+                    <div class="hobby-item">
+                        <span class="hobby-icon">🍦</span>
+                        <span class="hobby-name">Helado de Vainilla</span>
+                    </div>
+                </div>
+
+                <p class="click-hint">✨ Haz clic en cualquier parte de la pantalla para liberar sorpresas tropicales ✨</p>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Lista de emojis interactivos basados en tus gustos
+        const elements = ['🥥', '🍦', '🎮', '🐚', '☀️'];
+
+        document.addEventListener('click', (e) => {
+            // Crear el elemento emoji
+            const drop = document.createElement('div');
+            drop.classList.add('falling-element');
+            
+            // Elegir uno al azar
+            const randomEmoji = elements[Math.floor(Math.random() * elements.length)];
+            drop.innerText = randomEmoji;
+
+            // Posicionar donde el usuario hizo clic
+            drop.style.left = `${e.pageX - 15}px`;
+            drop.style.top = `${e.pageY - 15}px`;
+
+            // Duración aleatoria de la caída para que se vea más natural
+            const duration = Math.random() * 2 + 1.5; // Entre 1.5 y 3.5 segundos
+            drop.style.animationDuration = `${duration}s`;
+
+            document.body.appendChild(drop);
+
+            // Eliminar el elemento después de que termine la animación
+            setTimeout(() => {
+                drop.remove();
+            }, duration * 1000);
+        });
+    </script>
 </body>
 </html>
